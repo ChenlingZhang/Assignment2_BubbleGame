@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		69A3957829EFB7010032B203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A3957729EFB7010032B203 /* AppDelegate.swift */; };
+		69A3957A29EFB7010032B203 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A3957929EFB7010032B203 /* SceneDelegate.swift */; };
+		69A3957C29EFB7010032B203 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A3957B29EFB7010032B203 /* ViewController.swift */; };
+		69A3957F29EFB7010032B203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69A3957D29EFB7010032B203 /* Main.storyboard */; };
+		69A3958129EFB7020032B203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69A3958029EFB7020032B203 /* Assets.xcassets */; };
+		69A3958429EFB7020032B203 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69A3958229EFB7020032B203 /* LaunchScreen.storyboard */; };
+		69A3958F29EFB7020032B203 /* BubbleGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A3958E29EFB7020032B203 /* BubbleGameTests.swift */; };
+		69A3959929EFB7020032B203 /* BubbleGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A3959829EFB7020032B203 /* BubbleGameUITests.swift */; };
+		69A3959B29EFB7020032B203 /* BubbleGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A3959A29EFB7020032B203 /* BubbleGameUITestsLaunchTests.swift */; };
+		69A395AB29EFBE390032B203 /* GameSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A395AA29EFBE390032B203 /* GameSettingViewController.swift */; };
+		69A395AD29EFC5890032B203 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A395AC29EFC5890032B203 /* GameViewController.swift */; };
+		69A395AF29EFE7F20032B203 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A395AE29EFE7F20032B203 /* Bubble.swift */; };
+		69A395B129F00D4D0032B203 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A395B029F00D4D0032B203 /* HighScoreViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69A3958B29EFB7020032B203 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69A3956C29EFB7010032B203 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69A3957329EFB7010032B203;
+			remoteInfo = BubbleGame;
+		};
+		69A3959529EFB7020032B203 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69A3956C29EFB7010032B203 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69A3957329EFB7010032B203;
+			remoteInfo = BubbleGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		69A3957429EFB7010032B203 /* BubbleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69A3957729EFB7010032B203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		69A3957929EFB7010032B203 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		69A3957B29EFB7010032B203 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		69A3957E29EFB7010032B203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		69A3958029EFB7020032B203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69A3958329EFB7020032B203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		69A3958529EFB7020032B203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69A3958A29EFB7020032B203 /* BubbleGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubbleGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69A3958E29EFB7020032B203 /* BubbleGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleGameTests.swift; sourceTree = "<group>"; };
+		69A3959429EFB7020032B203 /* BubbleGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubbleGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69A3959829EFB7020032B203 /* BubbleGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleGameUITests.swift; sourceTree = "<group>"; };
+		69A3959A29EFB7020032B203 /* BubbleGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		69A395AA29EFBE390032B203 /* GameSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingViewController.swift; sourceTree = "<group>"; };
+		69A395AC29EFC5890032B203 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		69A395AE29EFE7F20032B203 /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
+		69A395B029F00D4D0032B203 /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69A3957129EFB7010032B203 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A3958729EFB7020032B203 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A3959129EFB7020032B203 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		69A3956B29EFB7010032B203 = {
+			isa = PBXGroup;
+			children = (
+				69A3957629EFB7010032B203 /* BubbleGame */,
+				69A3958D29EFB7020032B203 /* BubbleGameTests */,
+				69A3959729EFB7020032B203 /* BubbleGameUITests */,
+				69A3957529EFB7010032B203 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		69A3957529EFB7010032B203 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69A3957429EFB7010032B203 /* BubbleGame.app */,
+				69A3958A29EFB7020032B203 /* BubbleGameTests.xctest */,
+				69A3959429EFB7020032B203 /* BubbleGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69A3957629EFB7010032B203 /* BubbleGame */ = {
+			isa = PBXGroup;
+			children = (
+				69A395A929EFB7370032B203 /* View */,
+				69A395A829EFB7200032B203 /* Module */,
+				69A395A729EFB70F0032B203 /* Controller */,
+				69A3958529EFB7020032B203 /* Info.plist */,
+			);
+			path = BubbleGame;
+			sourceTree = "<group>";
+		};
+		69A3958D29EFB7020032B203 /* BubbleGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				69A3958E29EFB7020032B203 /* BubbleGameTests.swift */,
+			);
+			path = BubbleGameTests;
+			sourceTree = "<group>";
+		};
+		69A3959729EFB7020032B203 /* BubbleGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				69A3959829EFB7020032B203 /* BubbleGameUITests.swift */,
+				69A3959A29EFB7020032B203 /* BubbleGameUITestsLaunchTests.swift */,
+			);
+			path = BubbleGameUITests;
+			sourceTree = "<group>";
+		};
+		69A395A729EFB70F0032B203 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69A3957B29EFB7010032B203 /* ViewController.swift */,
+				69A395AA29EFBE390032B203 /* GameSettingViewController.swift */,
+				69A395AC29EFC5890032B203 /* GameViewController.swift */,
+				69A395B029F00D4D0032B203 /* HighScoreViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		69A395A829EFB7200032B203 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				69A395AE29EFE7F20032B203 /* Bubble.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		69A395A929EFB7370032B203 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69A3957729EFB7010032B203 /* AppDelegate.swift */,
+				69A3957929EFB7010032B203 /* SceneDelegate.swift */,
+				69A3957D29EFB7010032B203 /* Main.storyboard */,
+				69A3958029EFB7020032B203 /* Assets.xcassets */,
+				69A3958229EFB7020032B203 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69A3957329EFB7010032B203 /* BubbleGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69A3959E29EFB7020032B203 /* Build configuration list for PBXNativeTarget "BubbleGame" */;
+			buildPhases = (
+				69A3957029EFB7010032B203 /* Sources */,
+				69A3957129EFB7010032B203 /* Frameworks */,
+				69A3957229EFB7010032B203 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BubbleGame;
+			productName = BubbleGame;
+			productReference = 69A3957429EFB7010032B203 /* BubbleGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		69A3958929EFB7020032B203 /* BubbleGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69A395A129EFB7020032B203 /* Build configuration list for PBXNativeTarget "BubbleGameTests" */;
+			buildPhases = (
+				69A3958629EFB7020032B203 /* Sources */,
+				69A3958729EFB7020032B203 /* Frameworks */,
+				69A3958829EFB7020032B203 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69A3958C29EFB7020032B203 /* PBXTargetDependency */,
+			);
+			name = BubbleGameTests;
+			productName = BubbleGameTests;
+			productReference = 69A3958A29EFB7020032B203 /* BubbleGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		69A3959329EFB7020032B203 /* BubbleGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69A395A429EFB7020032B203 /* Build configuration list for PBXNativeTarget "BubbleGameUITests" */;
+			buildPhases = (
+				69A3959029EFB7020032B203 /* Sources */,
+				69A3959129EFB7020032B203 /* Frameworks */,
+				69A3959229EFB7020032B203 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69A3959629EFB7020032B203 /* PBXTargetDependency */,
+			);
+			name = BubbleGameUITests;
+			productName = BubbleGameUITests;
+			productReference = 69A3959429EFB7020032B203 /* BubbleGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		69A3956C29EFB7010032B203 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					69A3957329EFB7010032B203 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					69A3958929EFB7020032B203 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 69A3957329EFB7010032B203;
+					};
+					69A3959329EFB7020032B203 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 69A3957329EFB7010032B203;
+					};
+				};
+			};
+			buildConfigurationList = 69A3956F29EFB7010032B203 /* Build configuration list for PBXProject "BubbleGame" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 69A3956B29EFB7010032B203;
+			productRefGroup = 69A3957529EFB7010032B203 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69A3957329EFB7010032B203 /* BubbleGame */,
+				69A3958929EFB7020032B203 /* BubbleGameTests */,
+				69A3959329EFB7020032B203 /* BubbleGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69A3957229EFB7010032B203 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A3958429EFB7020032B203 /* LaunchScreen.storyboard in Resources */,
+				69A3958129EFB7020032B203 /* Assets.xcassets in Resources */,
+				69A3957F29EFB7010032B203 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A3958829EFB7020032B203 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A3959229EFB7020032B203 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69A3957029EFB7010032B203 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A395AD29EFC5890032B203 /* GameViewController.swift in Sources */,
+				69A395B129F00D4D0032B203 /* HighScoreViewController.swift in Sources */,
+				69A395AF29EFE7F20032B203 /* Bubble.swift in Sources */,
+				69A3957C29EFB7010032B203 /* ViewController.swift in Sources */,
+				69A395AB29EFBE390032B203 /* GameSettingViewController.swift in Sources */,
+				69A3957829EFB7010032B203 /* AppDelegate.swift in Sources */,
+				69A3957A29EFB7010032B203 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A3958629EFB7020032B203 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A3958F29EFB7020032B203 /* BubbleGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A3959029EFB7020032B203 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A3959B29EFB7020032B203 /* BubbleGameUITestsLaunchTests.swift in Sources */,
+				69A3959929EFB7020032B203 /* BubbleGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69A3958C29EFB7020032B203 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69A3957329EFB7010032B203 /* BubbleGame */;
+			targetProxy = 69A3958B29EFB7020032B203 /* PBXContainerItemProxy */;
+		};
+		69A3959629EFB7020032B203 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69A3957329EFB7010032B203 /* BubbleGame */;
+			targetProxy = 69A3959529EFB7020032B203 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		69A3957D29EFB7010032B203 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69A3957E29EFB7010032B203 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		69A3958229EFB7020032B203 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69A3958329EFB7020032B203 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		69A3959C29EFB7020032B203 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		69A3959D29EFB7020032B203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		69A3959F29EFB7020032B203 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BubbleGame/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.BubbleGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		69A395A029EFB7020032B203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BubbleGame/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.BubbleGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		69A395A229EFB7020032B203 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.BubbleGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BubbleGame.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BubbleGame";
+			};
+			name = Debug;
+		};
+		69A395A329EFB7020032B203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.BubbleGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BubbleGame.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BubbleGame";
+			};
+			name = Release;
+		};
+		69A395A529EFB7020032B203 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.BubbleGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BubbleGame;
+			};
+			name = Debug;
+		};
+		69A395A629EFB7020032B203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.BubbleGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BubbleGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69A3956F29EFB7010032B203 /* Build configuration list for PBXProject "BubbleGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A3959C29EFB7020032B203 /* Debug */,
+				69A3959D29EFB7020032B203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69A3959E29EFB7020032B203 /* Build configuration list for PBXNativeTarget "BubbleGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A3959F29EFB7020032B203 /* Debug */,
+				69A395A029EFB7020032B203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69A395A129EFB7020032B203 /* Build configuration list for PBXNativeTarget "BubbleGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A395A229EFB7020032B203 /* Debug */,
+				69A395A329EFB7020032B203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69A395A429EFB7020032B203 /* Build configuration list for PBXNativeTarget "BubbleGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A395A529EFB7020032B203 /* Debug */,
+				69A395A629EFB7020032B203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 69A3956C29EFB7010032B203 /* Project object */;
+}
