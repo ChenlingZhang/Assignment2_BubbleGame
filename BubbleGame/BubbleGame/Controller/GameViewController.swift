@@ -56,7 +56,6 @@ class GameViewController: UIViewController{
             timer in
             self.getRemainTiming()
             self.generateBubbles()
-            self.randomRemove()
         }
     }
     
@@ -79,7 +78,6 @@ class GameViewController: UIViewController{
             timer in
             self.getRemainTiming()
             self.generateBubbles()
-            self.randomRemove()
         }
     }
     
@@ -103,6 +101,7 @@ class GameViewController: UIViewController{
     
     // This function used to generate bubbles
     func generateBubbles(){
+        if bubbleList.count == maxBubbleOnScreen {randomRemove()}
         if bubbleList.count < maxBubbleOnScreen{
             let numberOfCreate = maxBubbleOnScreen - bubbleList.count
             
@@ -162,19 +161,26 @@ class GameViewController: UIViewController{
     }
     
     func saveScore(){
-        let record = GameScore(name: playerName!, score: currentScore)
+        let record = GameScore(name: playerName , score: currentScore)
         if playersHighScore.count == 0 {
             playersHighScore.append(record)
         }
         else {
             var tempList = playersHighScore
             if isNeedSave() {
+                if tempList.count == 0{
+                    tempList.append(record)
+                }
+                
                 for i in 0..<tempList.count {
                     if tempList[i].name == record.name{
                         tempList[i].score = record.score
                     }
-                    tempList.append(record)
+                    if tempList[i].name != record.name {
+                        tempList.append(record)
+                    }
                 }
+                
             }
             playersHighScore = tempList
         }
@@ -187,10 +193,9 @@ class GameViewController: UIViewController{
             if gameScore.name == playerName && gameScore.score < currentScore{
                 return true
             }
-            else
-            {
+            
+            if gameScore.name == playerName && gameScore.score > currentScore {
                 return false
-                
             }
         }
         return true
@@ -230,6 +235,6 @@ class GameViewController: UIViewController{
 }
 
 struct GameScore:Codable{
-    var name: String
+    var name: String?
     var score: Int
 }

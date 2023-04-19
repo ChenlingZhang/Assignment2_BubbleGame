@@ -18,8 +18,7 @@ class Bubble: UIButton {
     
     convenience init(){
         self.init(frame: CGRect.zero)
-        self.backgroundColor = bubbleValueSet().backgroundColor
-        self.value = bubbleValueSet().value
+        self.bubbleValueSet()
         self.frame = bubbleFrameSet()
         self.layer.cornerRadius = CGFloat(radius)
         self.layer.borderColor = UIColor.white.cgColor
@@ -36,30 +35,28 @@ class Bubble: UIButton {
     }
     
     // This function used to set bubbles' background color and values
-    func bubbleValueSet() -> BubbleStruct{
+    func bubbleValueSet(){
         let possiblility = Int.random(in: 0...100)
-        var bubbleStruct = BubbleStruct(backgroundColor: .clear, value: 0)
         
         switch possiblility{
         case 0...39:
-            bubbleStruct.backgroundColor = .red
-            bubbleStruct.value = 1
+            self.backgroundColor = .systemRed
+            self.value = 1
         case 40...69:
-            bubbleStruct.backgroundColor = .systemPink
-            bubbleStruct.value = 2
+            self.backgroundColor = .systemPink
+            self.value = 2
         case 70...85:
-            bubbleStruct.backgroundColor = .green
-            bubbleStruct.value = 5
+            self.backgroundColor = .systemGreen
+            self.value = 5
         case 86...94:
-            bubbleStruct.backgroundColor = .blue
-            bubbleStruct.value = 8
+            self.backgroundColor = .systemBlue
+            self.value = 8
         case 95...100:
-            bubbleStruct.backgroundColor = .black
-            bubbleStruct.value = 10
+            self.backgroundColor = .black
+            self.value = 10
         default:
             print("An error occur when generate bubble color with possibility")
         }
-        return bubbleStruct
     }
     
     // This function used to determin the animation when bubble appear
@@ -71,9 +68,4 @@ class Bubble: UIButton {
         
         layer.add(bubbleAnimation, forKey: nil)
     }
-}
-
-struct BubbleStruct{
-    var backgroundColor: UIColor
-    var value: Int
 }
