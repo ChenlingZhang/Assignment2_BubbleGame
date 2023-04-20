@@ -60,12 +60,27 @@ class Bubble: UIButton {
     }
     
     // This function used to determin the animation when bubble appear
-    func animation(){
-        let bubbleAnimation = CABasicAnimation(keyPath: "opacity")
-        bubbleAnimation.duration = 0.5
-        bubbleAnimation.fromValue = 0
-        bubbleAnimation.toValue = 1
+    func animation() {
+        let springAnimation = CASpringAnimation(keyPath: "transform.scale")
+        springAnimation.duration = 0.6
+        springAnimation.fromValue = 1
+        springAnimation.toValue = 0.8
+        springAnimation.repeatCount = 1
+        springAnimation.initialVelocity = 0.5
+        springAnimation.damping = 1
         
-        layer.add(bubbleAnimation, forKey: nil)
+        layer.add(springAnimation, forKey: nil)
+    }
+    
+    func flash() {
+        let flash = CABasicAnimation(keyPath: "opacity")
+        flash.duration = 0.2
+        flash.fromValue = 1
+        flash.toValue = 0.1
+        flash.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        flash.autoreverses = true
+        flash.repeatCount = 3
+        
+        layer.add(flash, forKey: nil)
     }
 }

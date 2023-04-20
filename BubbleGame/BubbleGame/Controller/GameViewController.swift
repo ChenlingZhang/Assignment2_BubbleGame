@@ -112,6 +112,7 @@ class GameViewController: UIViewController{
                 // Check new bubble is overlap to the other bubbles on the screen
                 if !isOverlap(newBubble){
                     bubbleList.append(newBubble)
+                    newBubble.animation()
                     view.addSubview(newBubble)
                 }
                 else{continue}
@@ -133,6 +134,7 @@ class GameViewController: UIViewController{
             bestScoreLabel.text = String(currentScore)
         }
         // remove from screen
+        sender.flash()
         sender.removeFromSuperview()
         // remove from list
         if let index = bubbleList.firstIndex(of: sender){

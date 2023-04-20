@@ -14,11 +14,11 @@ class HighScoreViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
+        playerHighScore = readScore()
+        
         playerHighScore.sort{
             $0.score > $1.score
         }
-        
-        playerHighScore = readScore()
     }
     
     func readScore() -> [GameScore]{
