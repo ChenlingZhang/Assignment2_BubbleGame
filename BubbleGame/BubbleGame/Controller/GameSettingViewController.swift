@@ -17,6 +17,10 @@ class GameSettingViewController: UIViewController {
     @IBOutlet weak var maxBubbles: UILabel!
     
     override func viewDidLoad() {
+        if checkNavigationBarStatus() {
+            self.navigationController!.setNavigationBarHidden(false, animated: true)
+        }
+        
         super.viewDidLoad()
         maxTime.text = String(currentMaxTime)
         maxBubbles.text = String(currentMaxBubble)
@@ -39,5 +43,9 @@ class GameSettingViewController: UIViewController {
             destination.time = currentMaxTime
             destination.playerName = playerName.text
         }
+    }
+    
+    func checkNavigationBarStatus() -> Bool{
+        return self.navigationController!.navigationBar.isHidden
     }
 }

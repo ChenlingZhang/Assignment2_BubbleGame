@@ -28,8 +28,8 @@ class Bubble: UIButton {
     // This function used to init bubble frame
     func bubbleFrameSet() ->CGRect{
         let bubble_size = CGFloat(2 * radius)
-        let bubble_x_position = CGFloat(10 + UInt32.random(in: 0...UInt32((UIScreenWidth - bubble_size))))
-        let bubble_y_position = CGFloat(10 + UInt32.random(in: 150...UInt32((UIScreenHeight - bubble_size))))
+        let bubble_x_position = CGFloat(10 + UInt32.random(in: 0...UInt32((UIScreenWidth - bubble_size - 20))))
+        let bubble_y_position = CGFloat(10 + UInt32.random(in: 170...UInt32((UIScreenHeight - bubble_size - 20))))
         
         return CGRect(x: bubble_x_position, y: bubble_y_position, width: bubble_size, height: bubble_size)
     }

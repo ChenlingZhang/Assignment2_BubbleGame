@@ -16,9 +16,11 @@ class GameViewController: UIViewController{
     var gameTimer = Timer()
     var wakeUpTimer = Timer()
     var gameStartTimer = Timer()
+    var randomRemoveTimer = Timer()
     var bubbleList: [Bubble] = []
     var currentScore: Int = 0
     var playersHighScore:[GameScore] = []
+    var lastClickBubble:[Bubble] = []
     
     let DEFAULT = UserDefaults.standard
     let HIGH_SCORE_KEY = "bestScore"
@@ -29,6 +31,10 @@ class GameViewController: UIViewController{
     @IBOutlet weak var gameReadyLabel: UILabel!
     
     override func viewDidLoad() {
+        if checkNavigationBarStatus() {
+            self.navigationController!.setNavigationBarHidden(false, animated: true)
+        }
+        
         super.viewDidLoad()
         // Game Timer counting
         gameTimeLabel.text = String(time)
@@ -51,11 +57,9 @@ class GameViewController: UIViewController{
             self.timerWakeUp()
         }
         
-        // GameTimer Start
-        gameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){
+        randomRemoveTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
             timer in
-            self.getRemainTiming()
-            self.generateBubbles()
+            self.randomRemove()
         }
     }
     
@@ -89,6 +93,7 @@ class GameViewController: UIViewController{
         if time == 0 {
             // stop gameTimer and bubble create timer
             gameTimer.invalidate()
+            randomRemoveTimer.invalidate()
             // save score if current score > best score
             if isNeedSave() {
                 saveScore()
@@ -101,7 +106,6 @@ class GameViewController: UIViewController{
     
     // This function used to generate bubbles
     func generateBubbles(){
-        if bubbleList.count == maxBubbleOnScreen {randomRemove()}
         if bubbleList.count < maxBubbleOnScreen{
             let numberOfCreate = maxBubbleOnScreen - bubbleList.count
             
@@ -124,10 +128,20 @@ class GameViewController: UIViewController{
         }
     }
     
-    // This functio used to set the operation about bubble onclick
+    // This function used to set the operation about bubble onclick
     @objc func bubbleOnclick(_ sender: Bubble){
+        var point = sender.value
+        
+        if lastClickBubble.count == 0 {
+            lastClickBubble.append(sender)
+        }
+        else if (lastClickBubble[0].backgroundColor == sender.backgroundColor){
+            point = point + Int(Double(point) * 1.5)
+        }
+        lastClickBubble[0] = sender
+        
         // Add score and update to label
-        currentScore += sender.value
+        currentScore += point
         updateCurrentScore()
         let bestScore = Int(bestScoreLabel.text!)
         if currentScore >= bestScore!{
@@ -157,38 +171,24 @@ class GameViewController: UIViewController{
         currentScoreLabel.text = String(currentScore)
     }
     
-    // This function used to update the best score label
-    func updateBestScoreLabel(){
-        
-    }
-    
+    // save data 2 user default
     func saveScore(){
         let record = GameScore(name: playerName , score: currentScore)
-        if playersHighScore.count == 0 {
+        let gameRecorder = getPlayerInfo(record)
+        
+        if gameRecorder.name != nil {
+            let index = playersHighScore.firstIndex(of: gameRecorder)
+            playersHighScore[index!].score = record.score
+        }
+        
+        else if gameRecorder.name == nil && gameRecorder.score == -1{
             playersHighScore.append(record)
         }
-        else {
-            var tempList = playersHighScore
-            if isNeedSave() {
-                if tempList.count == 0{
-                    tempList.append(record)
-                }
-                
-                for i in 0..<tempList.count {
-                    if tempList[i].name == record.name{
-                        tempList[i].score = record.score
-                    }
-                    if tempList[i].name != record.name {
-                        tempList.append(record)
-                    }
-                }
-                
-            }
-            playersHighScore = tempList
-        }
+        
         DEFAULT.set(try? PropertyListEncoder().encode(playersHighScore), forKey: HIGH_SCORE_KEY)
     }
     
+    // check is it need to save
     func isNeedSave() -> Bool{
         if (playersHighScore.count == 0) {return true}
         for gameScore in playersHighScore {
@@ -202,6 +202,17 @@ class GameViewController: UIViewController{
         }
         return true
     }
+    
+    // Get player name and score if exist
+    func getPlayerInfo(_ record: GameScore) -> GameScore{
+        for player in playersHighScore{
+            if player.name == record.name {
+                return player
+            }
+        }
+        return GameScore(name: nil, score: -1)
+    }
+    
     // This function used to readomly remove some bubbles
     func randomRemove(){
         var i = 0
@@ -234,9 +245,17 @@ class GameViewController: UIViewController{
        
         return []
     }
+    
+    func checkNavigationBarStatus() -> Bool{
+        return self.navigationController!.navigationBar.isHidden
+    }
 }
 
-struct GameScore:Codable{
+struct GameScore:Codable, Equatable{
     var name: String?
     var score: Int
+    
+    static func == (lhs: GameScore, rhs: GameScore) -> Bool {
+        return lhs.name == rhs.name && lhs.score == rhs.score
+    }
 }

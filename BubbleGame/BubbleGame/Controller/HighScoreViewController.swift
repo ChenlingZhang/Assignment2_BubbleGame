@@ -14,8 +14,14 @@ class HighScoreViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
+        // disable navigation bar
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
         playerHighScore = readScore()
         
+        for score in playerHighScore {
+            print("Player Name: \(score.name) Best Score: \(score.score)")
+        }
         playerHighScore.sort{
             $0.score > $1.score
         }
@@ -31,6 +37,16 @@ class HighScoreViewController: UIViewController{
         }
        
         return []
+    }
+    
+    @IBAction func Back2Menu(_ sender: Any) {
+        let destinationView = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        
+        // Disable navigation bar in view controller
+        destinationView.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        // jump 2 main menu
+        self.navigationController?.pushViewController(destinationView, animated: true)
     }
 }
 
