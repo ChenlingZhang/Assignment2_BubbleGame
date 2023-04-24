@@ -147,9 +147,40 @@ class GameViewController: UIViewController{
         if currentScore >= bestScore!{
             bestScoreLabel.text = String(currentScore)
         }
+        
+        // Add + value
+        let valueLabel = UILabel(frame: CGRect(x: sender.frame.origin.x + sender.frame.width, y: sender.frame.origin.y - 20, width: 100, height: 20))
+        if point > sender.value{
+            valueLabel.text = "bones! +\(point)"
+        }
+        else{
+            valueLabel.text = "+\(point)"
+            
+        }
+        valueLabel.textColor = .orange
+        valueLabel.textAlignment = .center
+        valueLabel.font = UIFont.systemFont(ofSize: 20)
+        
+        // make sure the label will not out of safr area
+        let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets ?? UIEdgeInsets.zero
+        valueLabel.frame.origin.x = min(valueLabel.frame.origin.x, sender.superview!.frame.maxX - valueLabel.frame.width - safeAreaInsets.right)
+        valueLabel.frame.origin.y = max(valueLabel.frame.origin.y, safeAreaInsets.top)
+        view.addSubview(valueLabel)
+        
         // remove from screen
         sender.flash()
         sender.removeFromSuperview()
+        
+        // remove the point label with arise animation
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            UIView.animate(withDuration: 0.5, animations: {
+                valueLabel.frame.origin.y -= 20
+                valueLabel.alpha = 0
+            }, completion: { _ in
+                valueLabel.removeFromSuperview()
+            })
+        }
+        
         // remove from list
         if let index = bubbleList.firstIndex(of: sender){
             bubbleList.remove(at: index)
